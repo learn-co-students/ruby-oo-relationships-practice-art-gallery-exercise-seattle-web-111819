@@ -16,7 +16,7 @@ class Painting
   end
 
   def self.total_price
-    @@all.reduce {|memo, painting| memo + painting.price}
+    @@all.reduce(0) {|memo, painting| memo + painting.price}
   end
 
 end

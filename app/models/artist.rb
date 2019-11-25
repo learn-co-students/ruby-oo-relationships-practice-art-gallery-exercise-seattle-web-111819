@@ -26,12 +26,11 @@ class Artist
   end
 
   def self.total_exerience
-    @@all.reduce {|memo, artist| memo + artist.years_experience}
+    @@all.reduce(0) {|memo, artist| memo + artist.years_experience}
   end
 
   def self.most_prolific
-    # @@all.map {|artist| [artist.paintings.count / artist.years_experience, artist]}.sort[-1][1]
-    @@all.max_by {|artist| artist.paintings.count / artist.years_experience}
+    @@all.max_by {|artist| artist.paintings.count.to_f / artist.years_experience}
   end
 
   def create_painting(title, price, gallery)
