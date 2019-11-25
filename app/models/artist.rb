@@ -18,7 +18,7 @@ class Artist
   end
 
   def galleries
-    self.paintings.map {|painting| painting.gallery}.uniq
+    self.paintings.map {|painting| painting.gallery}.uniq.compact
   end
 
   def cities
